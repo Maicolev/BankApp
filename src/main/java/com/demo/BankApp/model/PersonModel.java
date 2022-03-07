@@ -8,7 +8,7 @@ import java.util.Date;
 //For ORM
 @Entity
 @Table (name = "person")
-public class MPerson
+public class PersonModel
 {
     //Attributes
     @Id
@@ -20,9 +20,9 @@ public class MPerson
     private Date birthday;
 
     //Constructor
-    public MPerson(){}
+    public PersonModel(){}
 
-    public MPerson(long id, String name, String lastName, String address, String mailAddress, Date birthday)
+    public PersonModel(long id, String name, String lastName, String address, String mailAddress, Date birthday)
     {
         this.id = id;
         this.name = name;

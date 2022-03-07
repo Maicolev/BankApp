@@ -6,7 +6,7 @@ import java.util.Date;
 //For ORM
 @Entity
 @Table (name = "customer")
-public class MCustomer
+public class CustomerModel
 {
     //Attributes
     @Id
@@ -17,12 +17,12 @@ public class MCustomer
     //Foreign keys
     @OneToOne
     @JoinColumn(name = "person_id")
-    private MPerson mPerson;
+    private PersonModel mPerson;
 
     //Constructor
-    public MCustomer(){}
+    public CustomerModel(){}
 
-    public MCustomer(long id, Date admissionDate, double borrowingCapacity, MPerson mPerson)
+    public CustomerModel(long id, Date admissionDate, double borrowingCapacity, PersonModel mPerson)
     {
         this.id = id;
         this.admissionDate = admissionDate;
@@ -61,12 +61,12 @@ public class MCustomer
         this.borrowingCapacity = borrowingCapacity;
     }
 
-    public MPerson getmPerson()
+    public PersonModel getmPerson()
     {
         return mPerson;
     }
 
-    public void setmPerson(MPerson mPerson)
+    public void setmPerson(PersonModel mPerson)
     {
         this.mPerson = mPerson;
     }

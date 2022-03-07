@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "credit_card")
-public class MCreditCard
+public class CreditCardModel
 {
     //Attributes
     @Id
@@ -14,12 +14,12 @@ public class MCreditCard
     //Foreign key
     @ManyToOne
     @JoinColumn(name = "m_customer_id")
-    private MCustomer mCustomer;
+    private CustomerModel mCustomer;
 
     //Constructor
-    public MCreditCard(){}
+    public CreditCardModel(){}
 
-    public MCreditCard(long id, double quota, MCustomer mCustomer) {
+    public CreditCardModel(long id, double quota, CustomerModel mCustomer) {
         this.id = id;
         this.quota = quota;
         this.mCustomer = mCustomer;
@@ -46,13 +46,14 @@ public class MCreditCard
         this.quota = quota;
     }
 
-    public MCustomer getmCustomer()
+    public CustomerModel getmCustomer()
     {
         return mCustomer;
     }
 
-    public void setmCustomer(MCustomer mCustomer)
+    public void setmCustomer(CustomerModel mCustomer)
     {
         this.mCustomer = mCustomer;
     }
+    //Extra methods
 }
