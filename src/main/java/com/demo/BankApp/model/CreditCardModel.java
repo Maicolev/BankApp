@@ -8,12 +8,13 @@ public class CreditCardModel
 {
     //Attributes
     @Id
+    @Column(name = "credit_card_id")
     private long id;
     private double quota;
 
     //Foreign key
     @ManyToOne
-    @JoinColumn(name = "m_customer_id")
+    @JoinColumn(name = "customer_id")
     private CustomerModel mCustomer;
 
     //Constructor

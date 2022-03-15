@@ -1,5 +1,7 @@
 package com.demo.BankApp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,19 +12,21 @@ public class CustomerModel
 {
     //Attributes
     @Id
+    @Column(name = "customer_id")
     private long id;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date admissionDate;
     private double borrowingCapacity;
 
-    //Foreign keys
     @OneToOne
+    //@ForeignKey(name = "FK_PERS_CUST")
     @JoinColumn(name = "person_id")
     private PersonModel mPerson;
 
     //Constructor
     public CustomerModel(){}
 
-    public CustomerModel(long id, Date admissionDate, double borrowingCapacity, PersonModel mPerson)
+    public CustomerModel(Long id, Date admissionDate, double borrowingCapacity, PersonModel mPerson)
     {
         this.id = id;
         this.admissionDate = admissionDate;
@@ -31,13 +35,12 @@ public class CustomerModel
     }
 
     //Setter and getter
-    public long getId()
+    public Long getId()
     {
         return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -70,5 +73,8 @@ public class CustomerModel
     {
         this.mPerson = mPerson;
     }
+
     //Extra methods
+
+
 }
